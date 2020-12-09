@@ -1,0 +1,5 @@
+name: mysql
+
+image:
+  repository: pratibha28/custommysql
+  tag: v4
