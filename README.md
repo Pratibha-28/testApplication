@@ -4,13 +4,13 @@
 
 This application connects to a database, reads data from MySQL database, and returns this data upon HTTP request.
 
-In minikube, It reads MySQL database credentials from vault. 
+In minikube, It reads MySQL database credentials from the vault. 
 
-## Below are the steps for deploying this web application on minikube along with the required dependancies.
+## Below are the steps for deploying this web application on minikube along with the required dependencies.
 
 
 ### `System Prerequisites`
-Below tools setup should be available.
+Below tool's setup should be available.
 - Minikube
 - Kubectl CLI
 - Helm
@@ -33,7 +33,7 @@ git clone https://github.com/Pratibha-28/testApplication.git
     - ``` cd ../.. ```
     - ``` helm install common-secret --name=common-secret ```
 
-     **NOTE: This step can be skipped if secret is alreay available on minikube.**
+     **NOTE: This step can be skipped if secret is already available on minikube.**
     
 **2. Deploy MySQL** 
   
@@ -51,7 +51,7 @@ git clone https://github.com/Pratibha-28/testApplication.git
    - ``` helm install hashicorp/vault --values vault/helm-vault-values.yml --name=vault ```
    - ``` helm status vault ```
 
-   ### `Steps For Vault Initialization And Stroring Credentials`
+   ### `Steps For Vault Initialization And Storing Credentials`
       
    - To check the vault status  
      ``` kubectl exec vault-0 -- vault status ```
@@ -77,7 +77,7 @@ git clone https://github.com/Pratibha-28/testApplication.git
    - Enable kv-v2 secrets at the path secret.  
      ``` vault secrets enable -path=secret kv-v2 ```  
      
-   - Insert Mysql db creds in vault 
+   - Insert Mysql db credentials in vault 
      ``` 
      vault kv put secret/mysql/rootconfig MYSQL_ROOT_PASSWORD="rootpassword"  
      vault kv put secret/mysql/config MYSQL_USER="user" MYSQL_PASSWORD="password"  
