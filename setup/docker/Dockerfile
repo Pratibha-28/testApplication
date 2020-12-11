@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:5.7
 
 #create new DB
 ENV MYSQL_DATABASE testdb

@@ -1,0 +1,1 @@
+export URL#mysql://testUsr:***ADD-PASS-HERE***@localhost/testdb?charset=utf8_general_ci&timezone=-0700

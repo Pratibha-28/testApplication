@@ -2,4 +2,4 @@ name: mysql
 
 image:
   repository: pratibha28/custommysql
-  tag: v4
+  tag: v5.7

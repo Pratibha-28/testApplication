@@ -18,8 +18,10 @@ spec:
       - image: {{ .Values.image.repository}}:{{ .Values.image.tag}}
         name: {{ .Values.name }}
         env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: vault:secret/data/mysql/rootconfig#MYSQL_ROOT_PASSWORD
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: "true"
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: "true"
         - name: VAULT_ADDR
           value: "http://vault:8200"
         - name: JWT_PATH

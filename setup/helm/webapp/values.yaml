@@ -2,4 +2,4 @@ name: webapp
 
 image:
   repository: pratibha28/webapp
-  tag: v2
+  tag: v10

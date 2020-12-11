@@ -10,24 +10,22 @@ spec:
     type: Recreate
   template:
     metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "web-app"
+        vault.hashicorp.com/agent-inject-secret-database-config.txt: "secret/mysql/config"
+        vault.hashicorp.com/agent-inject-template-database-config.txt: |
+          {{`{{- with secret "secret/mysql/config" -}}
+            export url#mysql://{{.Data.data.MYSQL_USER}}:{{.Data.data.MYSQL_PASSWORD}}@mysql/testdb?charset=utf8_general_ci&timezone=-0700
+          {{- end }}`}}
       labels:
         app: {{ .Values.name }}
     spec:
-      serviceAccountName: vault
+      serviceAccountName: web-app
       containers:
       - image: {{ .Values.image.repository}}:{{ .Values.image.tag}}
         name: {{ .Values.name }}
         env:
-        - name: MYSQL_HOST
-          value: "mysql"
-        - name: MYSQL_DATABASE
-          value: "testdb"
-        - name: MYSQL_PORT
-          value: "3306"
-        - name: MYSQL_USER
-          value: vault:secret/data/mysql/config#MYSQL_USER
-        - name: MYSQL_PASSWORD
-          value: vault:secret/data/mysql/config#MYSQL_PASSWORD
         - name: VAULT_ADDR
           value: "http://vault:8200"
         - name: JWT_PATH
