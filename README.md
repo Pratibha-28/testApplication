@@ -138,6 +138,7 @@ git clone https://github.com/Pratibha-28/testApplication.git
    - Web application endpoint to get the data from MySQL db.  
      http://localhost:3000/message
 
+![alt text](https://github.com/Pratibha-28/testApplication/blob/main/tempsnip.png?raw=true)
 
 ## References  
 - https://learn.hashicorp.com/tutorials/vault/kubernetes-minikube
