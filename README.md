@@ -142,3 +142,4 @@ git clone https://github.com/Pratibha-28/testApplication.git
 
 ## References  
 - https://learn.hashicorp.com/tutorials/vault/kubernetes-minikube
+- https://www.vaultproject.io/docs/platform/k8s/injector/examples
