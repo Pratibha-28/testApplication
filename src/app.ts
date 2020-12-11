@@ -19,8 +19,6 @@ app.get('/message', (req, res)=>{
  
         const conn = mysql.createConnection(url);
 
-        console.log(`mysql env var ${url}`);
-
         conn.query('select message from appmsg', (err, rows, fields)=>{
           if(!err){
               console.log('Mysql DB connection is successful..sending data on UI');
