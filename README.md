@@ -80,7 +80,7 @@ git clone https://github.com/Pratibha-28/testApplication.git
    - Insert Mysql db credentials in vault 
      ``` 
      vault kv put secret/mysql/rootconfig MYSQL_ROOT_PASSWORD="rootpassword"  
-     vault kv put secret/mysql/config MYSQL_USER="user" MYSQL_PASSWORD="password"  
+     vault kv put secret/mysql/config MYSQL_USER="testUsr" MYSQL_PASSWORD="wournEwyin" 
      vault kv get secret/mysql/rootconfig  
      vault kv get secret/mysql/config  
      ```  
