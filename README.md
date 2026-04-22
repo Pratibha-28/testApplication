@@ -6,6 +6,32 @@ This application connects to a database, reads data from MySQL database, and ret
 
 In minikube, It reads MySQL database credentials from the vault. 
 
+## Run Locally
+
+1. Install dependencies:
+   ```
+   npm ci
+   ```
+2. Build TypeScript:
+   ```
+   npm run compileScripts
+   ```
+3. For local development, update `src/app.ts` to use:
+   ```ts
+   fs.readFile('./test.txt', 'utf8', ...)
+   ```
+   and then start the app:
+   ```
+   npm run start:dev
+   ```
+4. Open:
+   - `http://localhost:3000/message`
+
+### API
+
+- `GET /message`  
+  Returns all `message` rows from MySQL table `appmsg`.
+
 ## Below are the steps for deploying this web application on minikube along with the required dependencies.
 
 
