@@ -21,7 +21,7 @@ app.get('/message', (req, res)=>{
 
         conn.query('select message from appmsg', (err, rows, fields)=>{
           if(!err){
-              console.log('Mysql DB connection is successful..sending data on UI');
+              console.log('MySQL DB connection is successful..sending data to UI');
               res.send(rows);
           } else {
               console.log(err);
