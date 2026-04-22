@@ -16,15 +16,16 @@ In minikube, It reads MySQL database credentials from the vault.
    ```
    npm run compileScripts
    ```
-3. For local development, update `src/app.ts` to use:
-   ```ts
-   fs.readFile('./test.txt', 'utf8', ...)
+3. Create the secret file expected by the app:
    ```
-   and then start the app:
+   sudo mkdir -p /vault/secrets
+   sudo cp test.txt /vault/secrets/database-config.txt
+   ```
+4. Start the app:
    ```
    npm run start:dev
    ```
-4. Open:
+5. Open:
    - `http://localhost:3000/message`
 
 ### API
